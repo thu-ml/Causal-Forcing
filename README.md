@@ -26,7 +26,7 @@
 
 
 -----
-The Causal Forcing series uses **Causal ODE** or **Causal Consistency Distillation** to drive asymmetric DMD as a theoretically correct initialization for real-time interactive video generation. **Refer to [this extension](#minute-level-long-video-generation) for long video generation.**
+The Causal Forcing series uses **Causal ODE** or **Causal Consistency Distillation** to drive asymmetric DMD as a theoretically correct initialization for real-time interactive video generation. **Refer to [this extension for long video generation](#minute-level-long-video-generation).**
 
 [Causal Forcing](https://arxiv.org/abs/2602.02214) significantly outperforms Self Forcing in **both visual quality and motion dynamics**, while keeping **the same training budget and inference efficiency**. We support both chunk-wise and **frame-wise** models, with the latter natively unifying T2V and **I2V**.
 
