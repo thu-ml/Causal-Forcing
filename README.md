@@ -167,6 +167,11 @@ Built on [Rolling Forcing](https://github.com/TencentARC/RollingForcing), we imp
 
 ## Training
 
+
+### Note: We recently found that, for some models, Causal Forcing training may collapse during the CD/DMD stages when using reduced precision such as BF16 instead of FP32. If the model’s performance deteriorates as training proceeds, or the outputs remain blurry without improving, consider switching to FP32 precision.
+
+
+
 <details>
 <summary> Stage 1: Autoregressive Diffusion Training (Can skip by using our pretrained checkpoints. Click to expand.)</summary>
 
