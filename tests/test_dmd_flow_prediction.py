@@ -130,3 +130,24 @@ def test_non_flow_critic_still_converts_the_x0_prediction(monkeypatch):
     torch.testing.assert_close(captured["noise_pred"], predicted_x0 + 7.0)
     assert captured["flow_pred"] is None
     assert harness.scheduler.converted_x0
+
+
+def test_long_video_flow_critic_uses_the_models_native_flow_prediction(monkeypatch):
+    module = _load_dmd_module(monkeypatch, "long_video/model/dmd.py")
+    harness, shape, raw_flow, _, captured = _make_harness("flow")
+
+    loss, _ = module.DMD.critic_loss(
+        harness,
+        image_or_video_shape=shape,
+        conditional_dict={},
+        unconditional_dict={},
+        clean_latent=None,
+    )
+
+    torch.testing.assert_close(captured["flow_pred"], raw_flow.flatten(0, 1))
+    assert captured["noise_pred"] is None
+    assert not harness.scheduler.converted_x0
+
+    loss.backward()
+    assert raw_flow.grad is not None
+    assert torch.count_nonzero(raw_flow.grad) == raw_flow.numel()
