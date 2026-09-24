@@ -32,6 +32,8 @@ The Causal Forcing series uses **Causal ODE** or **Causal Consistency Distillati
 
 We further propose [**Causal Forcing++**](https://arxiv.org/abs/2605.15141)[ technical report ], replacing ODE with **causal Consistency Distillation** to eliminate ODE data curation and improve performance, releasing the first **1-step/2-step frame-wise** models.
 
+We're happy to see that recent SOTA video world models, such as [DreamX-World 1.0](https://arxiv.org/pdf/2606.16993), [Matrix-Game 3.5](https://matrix-game-v3-5.github.io/paper/Matrix-Game-3.5.pdf), [Astronex‑World 1.0](https://world.astronex.com.cn/) [Zing-0.5](https://arxiv.org/abs/2609.17909) and [ZYT-World](https://arxiv.org/abs/2609.21712) are built on Causal Forcing(++) initialization.
+
 -----
 <img width="2090" height="850" alt="overview" src="assets/pipeline.png" />
 
@@ -62,7 +64,6 @@ We further propose [**Causal Forcing++**](https://arxiv.org/abs/2605.15141)[ tec
 https://github.com/user-attachments/assets/310f0cfa-e1bb-496d-8941-87f77b3271c0
 
 ## 🔥 News
-- **2026.9.20**: Happy to see that the recent SOTA video world models [DreamX-World 1.0](https://arxiv.org/pdf/2606.16993), [Matrix-Game 3.5](https://matrix-game-v3-5.github.io/paper/Matrix-Game-3.5.pdf), [Astronex‑World 1.0](https://world.astronex.com.cn/) and [Zing-0.5](https://arxiv.org/abs/2609.17909) are built on Causal Forcing(++) initialization!
 - **2026.7.23**: [RAVEN](https://arxiv.org/abs/2605.15190) and [Self Gradient Forcing](https://github.com/zhuang2002/Self_Gradient_Forcing) are built on Causal Forcing initialization.
 - **2026.5.17**: We release Causal Forcing for the HY1.5-TI2V-8B model! Refer to [this repo](https://github.com/shengshu-ai/minWM) for the details. This model explicitly supports I2V.
 - **2026.5.15**: We release [Causal Forcing++](https://arxiv.org/abs/2605.15141), supporting Casual Consistency Distillation for few-step initialization, and open-source **the first frame-wise 2-step AR model** comparable to chunk-wise 4-step models!
