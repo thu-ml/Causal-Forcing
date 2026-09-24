@@ -32,7 +32,7 @@ The Causal Forcing series uses **Causal ODE** or **Causal Consistency Distillati
 
 We further propose [**Causal Forcing++**](https://arxiv.org/abs/2605.15141)[ technical report ], replacing ODE with **causal Consistency Distillation** to eliminate ODE data curation and improve performance, releasing the first **1-step/2-step frame-wise** models.
 
-We're happy to see that recent SOTA video world models, such as [DreamX-World 1.0](https://arxiv.org/pdf/2606.16993), [Matrix-Game 3.5](https://matrix-game-v3-5.github.io/paper/Matrix-Game-3.5.pdf), [Astronex‑World 1.0](https://world.astronex.com.cn/) [Zing-0.5](https://arxiv.org/abs/2609.17909) and [ZYT-World](https://arxiv.org/abs/2609.21712) are built on Causal Forcing(++) initialization.
+We're happy to see that recent SOTA video world models, such as [DreamX-World 1.0](https://arxiv.org/pdf/2606.16993), [Matrix-Game 3.5](https://matrix-game-v3-5.github.io/paper/Matrix-Game-3.5.pdf), [Astronex‑World 1.0](https://world.astronex.com.cn/), [Zing-0.5](https://arxiv.org/abs/2609.17909) and [ZYT-World](https://arxiv.org/abs/2609.21712) are built on Causal Forcing(++) initialization.
 
 -----
 <img width="2090" height="850" alt="overview" src="assets/pipeline.png" />
