@@ -64,6 +64,7 @@ We're happy to see that recent SOTA video world models, such as [DreamX-World 1.
 https://github.com/user-attachments/assets/310f0cfa-e1bb-496d-8941-87f77b3271c0
 
 ## 🔥 News
+- **2026.10.1**: Thanks to @iroki-abe-58's effort, CF++ now has a ComfyUI node: https://github.com/hiroki-abe-58/ComfyUI-CausalForcing.
 - **2026.7.23**: [RAVEN](https://arxiv.org/abs/2605.15190) and [Self Gradient Forcing](https://github.com/zhuang2002/Self_Gradient_Forcing) are built on Causal Forcing initialization.
 - **2026.5.17**: We release Causal Forcing for the HY1.5-TI2V-8B model! Refer to [this repo](https://github.com/shengshu-ai/minWM) for the details. This model explicitly supports I2V.
 - **2026.5.15**: We release [Causal Forcing++](https://arxiv.org/abs/2605.15141), supporting Casual Consistency Distillation for few-step initialization, and open-source **the first frame-wise 2-step AR model** comparable to chunk-wise 4-step models!
