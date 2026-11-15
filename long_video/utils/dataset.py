@@ -94,7 +94,7 @@ class ShardingLMDBDataset(Dataset):
         self.max_pair = max_pair
 
     def __len__(self):
-        return len(self.index)
+        return min(len(self.index), self.max_pair)
 
     def __getitem__(self, idx):
         """
