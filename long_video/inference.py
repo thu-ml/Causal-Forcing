@@ -42,11 +42,13 @@ if "LOCAL_RANK" in os.environ:
     torch.cuda.set_device(local_rank)
     device = torch.device(f"cuda:{local_rank}")
     world_size = dist.get_world_size()
+    rank = dist.get_rank()
     set_seed(args.seed + local_rank)
 else:
     device = torch.device("cuda")
     local_rank = 0
     world_size = 1
+    rank = 0
     set_seed(args.seed)
 
 torch.set_grad_enabled(False)
@@ -98,7 +100,7 @@ num_prompts = len(dataset)
 print(f"Number of prompts: {num_prompts}")
 
 if dist.is_initialized():
-    sampler = DistributedSampler(dataset, shuffle=False, drop_last=True)
+    sampler = DistributedSampler(dataset, shuffle=False, drop_last=False)
 else:
     sampler = SequentialSampler(dataset)
 dataloader = DataLoader(dataset, batch_size=1, sampler=sampler, num_workers=0, drop_last=False)
@@ -183,8 +185,8 @@ for i, batch_data in tqdm(enumerate(dataloader), disable=(local_rank != 0)):
     # Clear VAE cache
     pipeline.vae.model.clear_cache()
 
-    # Save the video if the current prompt is not a dummy prompt
-    if idx < num_prompts:
+    # DistributedSampler pads the final round with duplicate prompts. Only save real positions.
+    if i * world_size + rank < num_prompts:
         model = "regular" if not args.use_ema else "ema"
         for seed_idx in range(args.num_samples):
             # All processes save their videos
